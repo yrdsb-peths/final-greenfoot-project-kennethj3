@@ -1,11 +1,14 @@
 #Greenfoot project file
-class.Soldier.image=solderRunning.jpg
+class.Soldier.image=running4.png
+dependency1.from=MyWorld
+dependency1.to=Soldier
+dependency1.type=UsesDependency
 editor.fx.0.height=801
 editor.fx.0.width=658
 editor.fx.0.x=776
 editor.fx.0.y=31
 height=809
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=UTF-8
 publish.hasSource=false
