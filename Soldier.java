@@ -13,13 +13,16 @@ public class Soldier extends Actor
      * Act - do whatever the Soldier wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage[] images = new GreenfootImage[12];
+    GreenfootImage[] images = new GreenfootImage[11];
+    SimpleTimer animationTimer = new SimpleTimer();
     public Soldier()
     {
         for(int i = 0; i < images.length; i++)
         {
             images[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
         }
+        
+        
     }
     public void act()
     {
@@ -42,8 +45,29 @@ public class Soldier extends Actor
             int y = getY() + 2;
             setLocation(getX(), y);
         }
-        
+        animations();
         // Add your action code here.
+        
+    }
+    
+    int i = 0;
+    public void animations()
+    {
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("s"))
+        {
+            setImage(images[i]);
+        }
+        i++;
+        if(i > 10)
+        {
+            i = 0;
+        }
         
     }
     
