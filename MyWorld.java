@@ -21,8 +21,17 @@ public class MyWorld extends World
         Soldier soldier = new Soldier();
         addObject(soldier, 40, 200);
         
-        Zombie zombie = new Zombie();
+        int level = 1;
         
+        spawnZombies();
         
+    }
+    
+    public void spawnZombies()
+    {
+       Zombie zombie = new Zombie();
+       int x = 675;
+       int y = Greenfoot.getRandomNumber(getHeight());
+       addObject(zombie, x, y);
     }
 }
