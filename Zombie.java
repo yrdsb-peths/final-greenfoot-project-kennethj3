@@ -13,6 +13,7 @@ public class Zombie extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 1;
+    String facing = "right";
     public void act()
     {
         int x = getX() - speed;

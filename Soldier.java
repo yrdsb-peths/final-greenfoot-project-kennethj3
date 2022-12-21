@@ -13,13 +13,24 @@ public class Soldier extends Actor
      * Act - do whatever the Soldier wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage[] images = new GreenfootImage[11];
+    GreenfootImage[] imagesRight = new GreenfootImage[11];
+    GreenfootImage[] imagesLeft = new GreenfootImage[11];
     SimpleTimer animationTimer = new SimpleTimer();
+    SimpleTimer jumpingTimer = new SimpleTimer();
+    String facing = "right";
     public Soldier()
     {
-        for(int i = 0; i < images.length; i++)
+        for(int i = 0; i < imagesRight.length; i++)
         {
-            images[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
+            imagesRight[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
+            imagesRight[i].scale(50,70);
+        }
+        
+        for(int i = 0; i < imagesLeft.length; i++)
+        {
+            imagesLeft[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
+            imagesLeft[i].mirrorHorizontally();
+            imagesLeft[i].scale(50,70);
         }
         
         
@@ -30,25 +41,32 @@ public class Soldier extends Actor
         if(Greenfoot.isKeyDown("a"))
         {
             move(-2);
+            facing = "left";
         }
         if(Greenfoot.isKeyDown("d"))
         {
             move(2);
+            facing = "right";
+        
         }
-        if(Greenfoot.isKeyDown("w"))
+        
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("d"))
         {
-            int y = getY() - 2;
-            setLocation(getX(), y);
+            animations();
         }
-        if(Greenfoot.isKeyDown("s"))
-        {
-            int y = getY() + 2;
-            setLocation(getX(), y);
-        }
-        animations();
+        
+        
+        
+        
+        
+        
+        
         // Add your action code here.
         
     }
+    
+   
+    
     
     int i = 0;
     public void animations()
@@ -58,11 +76,15 @@ public class Soldier extends Actor
             return;
         }
         animationTimer.mark();
-        
-        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("s"))
+        if(facing.equals("right"))
         {
-            setImage(images[i]);
+            setImage(imagesRight[i]);
         }
+        else
+        {
+            setImage(imagesLeft[i]);
+        }
+        
         i++;
         if(i > 10)
         {

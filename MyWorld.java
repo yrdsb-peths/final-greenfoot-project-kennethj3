@@ -16,10 +16,10 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(700, 500, 1);
+        super(800, 600, 1);
         
         Soldier soldier = new Soldier();
-        addObject(soldier, 40, 200);
+        addObject(soldier, 40, 450);
         
         int level = 1;
         
@@ -30,8 +30,17 @@ public class MyWorld extends World
     public void spawnZombies()
     {
        Zombie zombie = new Zombie();
-       int x = 675;
-       int y = Greenfoot.getRandomNumber(getHeight());
-       addObject(zombie, x, y);
+       int setX = Greenfoot.getRandomNumber(2);
+       int y = 450;
+       if(setX == 1)
+       {
+           int x = 40;   
+           addObject(zombie, x, y);
+       }
+       else if(setX == 2)
+       {
+           int x = 760;
+           addObject(zombie, x, y);
+       }
     }
 }
