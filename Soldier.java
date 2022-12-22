@@ -61,6 +61,7 @@ public class Soldier extends Actor
         
         
         
+        
         // Add your action code here.
         
     }
