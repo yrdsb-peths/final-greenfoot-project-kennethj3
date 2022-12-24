@@ -21,7 +21,7 @@ public class MyWorld extends World
         background.scale(getWidth(), getHeight());
         setBackground(background);
         Soldier soldier = new Soldier();
-        addObject(soldier, 363, 450);
+        addObject(soldier, 544, 450);
         
         int level = 1;
         
@@ -41,7 +41,7 @@ public class MyWorld extends World
        }
        else
        {
-           int x = 685;
+           int x = 1048;
            addObject(zombie, x, y);
        }
     }
