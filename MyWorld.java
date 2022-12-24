@@ -31,18 +31,21 @@ public class MyWorld extends World
     
     public void spawnZombies()
     {
-       Zombie zombie = new Zombie();
-       int setX = Greenfoot.getRandomNumber(2);
-       int y = 450;
-       if(setX == 1)
-       {
-           int x = 40;   
-           addObject(zombie, x, y);
-       }
-       else
-       {
-           int x = 1048;
-           addObject(zombie, x, y);
-       }
+        Zombie zombie = new Zombie();
+        int setX = Greenfoot.getRandomNumber(2);
+        int y = 450;
+        if(setX == 1)
+        {      
+            addObject(zombie, 40, y);
+        }
+        else
+        {
+            addObject(zombie, 1048, y);
+        }
+        
     }
+    
+    
+    
+    
 }

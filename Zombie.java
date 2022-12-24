@@ -22,7 +22,7 @@ public class Zombie extends Actor
         for(int i = 0; i < imagesRight.length; i++)
         {
             imagesRight[i] = new GreenfootImage("images/ZombieRunning/tile00" + i + ".png");
-            imagesLeft[i].mirrorHorizontally();
+            imagesRight[i].mirrorHorizontally();
             imagesRight[i].scale(50,75);
         }
         
