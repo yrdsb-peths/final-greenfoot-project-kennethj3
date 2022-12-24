@@ -16,7 +16,18 @@ public class Zombie extends Actor
     String facing = "right";
     public void act()
     {
-        int x = getX() - speed;
-        int y = getY();// Add your action code here.
+        if(facing.equals("right"))
+        {
+            int x = getX() + speed;
+            int y = getY();
+            setLocation(x, y);
+        }
+        else
+        {
+            int x = getX() - speed;
+            int y = getY();
+            setLocation(x, y);
+        }
+        // Add your action code here.
     }
 }
