@@ -23,14 +23,14 @@ public class Soldier extends Actor
         for(int i = 0; i < imagesRight.length; i++)
         {
             imagesRight[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
-            imagesRight[i].scale(50,70);
+            imagesRight[i].scale(50,75);
         }
         
         for(int i = 0; i < imagesLeft.length; i++)
         {
             imagesLeft[i] = new GreenfootImage("images/SoldierRunning/running" + i + ".png");
             imagesLeft[i].mirrorHorizontally();
-            imagesLeft[i].scale(50,70);
+            imagesLeft[i].scale(50,75);
         }
         
         
