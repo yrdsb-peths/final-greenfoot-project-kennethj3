@@ -13,6 +13,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    SimpleTimer zombieSpawnTimer = new SimpleTimer();
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -25,15 +26,20 @@ public class MyWorld extends World
         
         int level = 1;
         
-        spawnZombies();
         
+        
+    }
+    
+    public void act()
+    {
+        spawnZombies();
     }
     
     public void spawnZombies()
     {
         Zombie zombie = new Zombie();
         int setX = Greenfoot.getRandomNumber(2);
-        int y = 450;
+        int y = 440;
         if(setX == 1)
         {      
             addObject(zombie, 40, y);
@@ -42,8 +48,14 @@ public class MyWorld extends World
         {
             addObject(zombie, 1048, y);
         }
-        
+        if(zombieSpawnTimer.millisElapsed() < 20000)
+        {
+            return;
+        }
+        zombieSpawnTimer.mark();
     }
+    
+    
     
     
     

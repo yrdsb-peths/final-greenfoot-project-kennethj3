@@ -14,22 +14,23 @@ public class Zombie extends Actor
      */
     int speed = 1;
     String facing = "right";
-    GreenfootImage[] imagesRight = new GreenfootImage[8];
-    GreenfootImage[] imagesLeft = new GreenfootImage[8];
+    GreenfootImage[] imagesRight = new GreenfootImage[5];
+    GreenfootImage[] imagesLeft = new GreenfootImage[5];
     SimpleTimer animationTimer = new SimpleTimer();
     public Zombie()
     {
         for(int i = 0; i < imagesRight.length; i++)
         {
-            imagesRight[i] = new GreenfootImage("images/ZombieRunning/tile00" + i + ".png");
-            imagesRight[i].mirrorHorizontally();
-            imagesRight[i].scale(50,75);
+            imagesRight[i] = new GreenfootImage("images/zombie/tile00" + i + ".png");
+            imagesRight[i].scale(100,150);
         }
         
         for(int i = 0; i < imagesLeft.length; i++)
         {
-            imagesLeft[i] = new GreenfootImage("images/ZombieRunning/tile00" + i + ".png");
-            imagesLeft[i].scale(50,75);
+            imagesLeft[i] = new GreenfootImage("images/zombie/tile00" + i + ".png");
+            imagesLeft[i].scale(100,150);
+            imagesLeft[i].mirrorHorizontally();
+            
         }
     }
     
@@ -77,7 +78,7 @@ public class Zombie extends Actor
         }
         
         i++;
-        if(i > 7)
+        if(i > 4)
         {
             i = 0;
         }

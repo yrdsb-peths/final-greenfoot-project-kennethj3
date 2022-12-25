@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.MyWorld.image=Background.jpg
 class.Soldier.image=running4.png
-class.Zombie.image=tile007.png
+class.Zombie.image=tile004.png
 dependency1.from=MyWorld
 dependency1.to=Soldier
 dependency1.type=UsesDependency
