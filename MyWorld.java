@@ -26,14 +26,17 @@ public class MyWorld extends World
         
         int level = 1;
         
+        spawnZombies();
         
         
     }
     
     public void act()
     {
-        spawnZombies();
+        checkForSpawn();
     }
+    
+    
     
     public void spawnZombies()
     {
@@ -48,11 +51,19 @@ public class MyWorld extends World
         {
             addObject(zombie, 1048, y);
         }
-        if(zombieSpawnTimer.millisElapsed() < 20000)
+        
+        
+    }
+    
+    int spawnTimer;
+    private void checkForSpawn()
+    {
+        spawnTimer = (spawnTimer+1)%300; 
+        if (spawnTimer == 0) 
         {
-            return;
+            spawnZombies();
+        
         }
-        zombieSpawnTimer.mark();
     }
     
     
