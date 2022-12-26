@@ -32,6 +32,7 @@ public class Zombie extends Actor
             imagesLeft[i].mirrorHorizontally();
             
         }
+        
     }
     
     public void act()
@@ -57,6 +58,7 @@ public class Zombie extends Actor
             setLocation(x, y);
         }
         animations();
+        killingPlayer();
         // Add your action code here.
     }
     
@@ -83,6 +85,16 @@ public class Zombie extends Actor
             i = 0;
         }
         
+    }
+    
+    public void killingPlayer()
+    {
+        if(isTouching(Soldier.class))
+        {
+            removeTouching(Soldier.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+        }
     }
     
 }

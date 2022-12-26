@@ -36,6 +36,12 @@ public class MyWorld extends World
         checkForSpawn();
     }
     
+    public void gameOver()
+    {
+        Label endLabel = new Label("Game Over!", 150);
+        addObject(endLabel, 544, 242);
+    }
+    
     
     
     public void spawnZombies()
