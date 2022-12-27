@@ -16,7 +16,8 @@ public class Soldier extends Actor
     GreenfootImage[] imagesRight = new GreenfootImage[11];
     GreenfootImage[] imagesLeft = new GreenfootImage[11];
     SimpleTimer animationTimer = new SimpleTimer();
-    SimpleTimer jumpingTimer = new SimpleTimer();
+    
+    
     String facing = "right";
     public Soldier()
     {
@@ -55,7 +56,7 @@ public class Soldier extends Actor
             animations();
         }
         
-        shoot();
+        checkForShooting();
         
         
         
@@ -94,6 +95,7 @@ public class Soldier extends Actor
         
     }
     
+    
     private void shoot()
     {
         if(Greenfoot.isKeyDown("space"))
@@ -104,9 +106,16 @@ public class Soldier extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.addObject(bullet, x, y);
             
-            
-            
-        
+        }    
+    }
+    
+    int shootingTimer;
+    private void checkForShooting()
+    {
+        shootingTimer = (shootingTimer+1)%20;
+        if(shootingTimer == 0)
+        {
+            shoot();
         }
     }
     
