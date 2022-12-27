@@ -55,7 +55,7 @@ public class Soldier extends Actor
             animations();
         }
         
-        
+        shoot();
         
         
         
@@ -92,6 +92,22 @@ public class Soldier extends Actor
             i = 0;
         }
         
+    }
+    
+    private void shoot()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            int x = getX();
+            int y = getY();
+            Bullet bullet = new Bullet();
+            MyWorld world = (MyWorld) getWorld();
+            world.addObject(bullet, x, y);
+            
+            
+            
+        
+        }
     }
     
     
