@@ -94,6 +94,9 @@ public class Zombie extends Actor
             removeTouching(Soldier.class);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+            
+            EndScreen endWorld = new EndScreen();
+            Greenfoot.setWorld(endWorld);
         }
     }
     
