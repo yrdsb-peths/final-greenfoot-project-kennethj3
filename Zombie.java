@@ -17,6 +17,7 @@ public class Zombie extends Actor
     GreenfootImage[] imagesRight = new GreenfootImage[5];
     GreenfootImage[] imagesLeft = new GreenfootImage[5];
     SimpleTimer animationTimer = new SimpleTimer();
+    GreenfootSound sound;
     public Zombie()
     {
         for(int i = 0; i < imagesRight.length; i++)
@@ -32,6 +33,7 @@ public class Zombie extends Actor
             imagesLeft[i].mirrorHorizontally();
             
         }
+        sound = new GreenfootSound("ZombieGrowl.mp3");
         
     }
     
@@ -96,6 +98,7 @@ public class Zombie extends Actor
     {
         if(isTouching(Soldier.class))
         {
+            sound.play();
             removeTouching(Soldier.class);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
