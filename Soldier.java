@@ -18,7 +18,7 @@ public class Soldier extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     
     
-    String facing = "right";
+    public static String facing = "right";
     public Soldier()
     {
         for(int i = 0; i < imagesRight.length; i++)
@@ -117,6 +117,11 @@ public class Soldier extends Actor
         {
             shoot();
         }
+    }
+    
+    public static String getDirection()
+    {
+       return facing;
     }
     
     
