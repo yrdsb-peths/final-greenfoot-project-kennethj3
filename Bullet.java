@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
     GreenfootImage image = getImage();
-    
+    GreenfootSound sound;
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,6 +37,7 @@ public class Bullet extends Actor
     public Bullet()
     {
         image.scale(25,15);
+        sound = new GreenfootSound("BulletHitting.mp3");
     }
     
     public void shooting()
@@ -44,7 +45,7 @@ public class Bullet extends Actor
         if(isTouching(Zombie.class))
         {
             removeTouching(Zombie.class);
-            
+            sound.play();
         }
     }
     
