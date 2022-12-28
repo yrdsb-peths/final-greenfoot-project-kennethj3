@@ -87,6 +87,11 @@ public class Zombie extends Actor
         
     }
     
+    public void setSpeed(int spd)
+    {
+        speed = spd;
+    }
+    
     public void killingPlayer()
     {
         if(isTouching(Soldier.class))

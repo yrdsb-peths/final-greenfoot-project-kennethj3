@@ -40,12 +40,15 @@ public class Bullet extends Actor
         sound = new GreenfootSound("BulletHitting.mp3");
     }
     
+    
     public void shooting()
     {
         if(isTouching(Zombie.class))
         {
             removeTouching(Zombie.class);
             sound.play();
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
         }
     }
     

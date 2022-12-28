@@ -14,6 +14,8 @@ public class MyWorld extends World
      * 
      */
     SimpleTimer zombieSpawnTimer = new SimpleTimer();
+    public int score = 0;
+    int level = 1;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,7 +26,7 @@ public class MyWorld extends World
         Soldier soldier = new Soldier();
         addObject(soldier, 544, 450);
         
-        int level = 1;
+        
         
         spawnZombies();
         
@@ -42,11 +44,21 @@ public class MyWorld extends World
         addObject(endLabel, 544, 242);
     }
     
+    public void increaseScore()
+    {
+        score++;
+        
+        if(score%5 == 0)
+        {
+            level = level + 1;
+        }
+    }
     
     
     public void spawnZombies()
     {
         Zombie zombie = new Zombie();
+        zombie.setSpeed(level);
         int setX = Greenfoot.getRandomNumber(2);
         int y = 440;
         if(setX == 1)
@@ -64,10 +76,11 @@ public class MyWorld extends World
     int spawnTimer;
     private void checkForSpawn()
     {
-        spawnTimer = (spawnTimer+1)%300; 
+        spawnTimer = (spawnTimer+1)%(300-(level*20)); 
         if (spawnTimer == 0) 
         {
             spawnZombies();
+            
         
         }
     }
