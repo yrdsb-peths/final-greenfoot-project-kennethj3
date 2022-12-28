@@ -29,12 +29,23 @@ public class Bullet extends Actor
             int y = getY();
             setLocation(x,y);
         }
+        
+        shooting();
         // Add your action code here.
     }
     
     public Bullet()
     {
         image.scale(25,15);
+    }
+    
+    public void shooting()
+    {
+        if(isTouching(Zombie.class))
+        {
+            removeTouching(Zombie.class);
+            
+        }
     }
     
     
