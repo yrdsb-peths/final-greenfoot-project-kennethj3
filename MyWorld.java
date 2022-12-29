@@ -78,7 +78,7 @@ public class MyWorld extends World
     int spawnTimer;
     private void checkForSpawn()
     {
-        spawnTimer = (spawnTimer+1)%(300-(level*20)); 
+        spawnTimer = (spawnTimer+1)%(150-(level*20)); 
         if (spawnTimer == 0) 
         {
             spawnZombies();

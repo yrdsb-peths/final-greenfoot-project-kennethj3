@@ -46,8 +46,9 @@ public class Bullet extends Actor
         if(isTouching(Zombie.class))
         {
             removeTouching(Zombie.class);
-            sound.play();
             MyWorld world = (MyWorld) getWorld();
+            world.removeObject(this);
+            sound.play();
             world.increaseScore();
         }
     }
