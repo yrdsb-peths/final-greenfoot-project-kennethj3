@@ -57,7 +57,7 @@ public class Soldier extends Actor
         }
         
         checkForShooting();
-        
+        reload();
         
         
         
@@ -95,18 +95,35 @@ public class Soldier extends Actor
         
     }
     
-    
+    int ammo = 7;
     private void shoot()
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            int x = getX();
-            int y = getY();
-            Bullet bullet = new Bullet();
-            MyWorld world = (MyWorld) getWorld();
-            world.addObject(bullet, x, y);
-            
+            if(ammo > 0)
+            {
+                int x = getX();
+                int y = getY();
+                Bullet bullet = new Bullet();
+                MyWorld world = (MyWorld) getWorld();
+                world.addObject(bullet, x, y);
+                ammo = ammo - 1;
+            }
         }    
+    }
+    
+    
+    int reloadTimer;
+    private void reload()
+    {
+        if(Greenfoot.isKeyDown("e"))
+        {
+            reloadTimer = (reloadTimer+1)%35;
+            if(reloadTimer == 0)
+            {
+                ammo = 7;
+            }
+        }
     }
     
     int shootingTimer;
