@@ -30,7 +30,7 @@ public class Bullet extends Actor
             setLocation(x,y);
         }
         
-        shooting();
+        hittingZombies();
         // Add your action code here.
     }
     
@@ -41,7 +41,7 @@ public class Bullet extends Actor
     }
     
     
-    public void shooting()
+    public void hittingZombies()
     {
         if(isTouching(Zombie.class))
         {
@@ -52,6 +52,8 @@ public class Bullet extends Actor
             world.increaseScore();
         }
     }
+    
+    
     
     
 }

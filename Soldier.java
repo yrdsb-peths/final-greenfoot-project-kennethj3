@@ -16,7 +16,7 @@ public class Soldier extends Actor
     GreenfootImage[] imagesRight = new GreenfootImage[11];
     GreenfootImage[] imagesLeft = new GreenfootImage[11];
     SimpleTimer animationTimer = new SimpleTimer();
-    
+    Label ammoLabel;
     
     public static String facing = "right";
     public Soldier()
@@ -33,6 +33,8 @@ public class Soldier extends Actor
             imagesLeft[i].mirrorHorizontally();
             imagesLeft[i].scale(50,75);
         }
+        
+        
         
         
     }
@@ -57,7 +59,7 @@ public class Soldier extends Actor
         }
         
         checkForShooting();
-        reload();
+        
         
         
         
@@ -95,36 +97,27 @@ public class Soldier extends Actor
         
     }
     
-    int ammo = 7;
+    
     private void shoot()
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            if(ammo > 0)
+            MyWorld world = (MyWorld) getWorld();
+            if(world.ammo > 0)
             {
                 int x = getX();
                 int y = getY();
                 Bullet bullet = new Bullet();
-                MyWorld world = (MyWorld) getWorld();
                 world.addObject(bullet, x, y);
-                ammo = ammo - 1;
+                world.ammo = world.ammo - 1;
             }
+            
         }    
     }
     
     
-    int reloadTimer;
-    private void reload()
-    {
-        if(Greenfoot.isKeyDown("e"))
-        {
-            reloadTimer = (reloadTimer+1)%35;
-            if(reloadTimer == 0)
-            {
-                ammo = 7;
-            }
-        }
-    }
+    
+    
     
     int shootingTimer;
     private void checkForShooting()

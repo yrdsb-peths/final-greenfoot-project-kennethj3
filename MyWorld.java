@@ -17,6 +17,7 @@ public class MyWorld extends World
     public int score = 0;
     int level = 1;
     Label scoreLabel;
+    Label ammoLabel;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,12 +33,18 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 60); 
         spawnZombies();
         
+        ammoLabel = new Label(7, 125);
+        addObject(ammoLabel, 1038, 60);
+        
+        
         
     }
     
     public void act()
     {
         checkForSpawn();
+        reload();
+        ammoLabel.setValue(ammo);
     }
     
     public void gameOver()
@@ -53,6 +60,22 @@ public class MyWorld extends World
         if(score%5 == 0)
         {
             level = level + 1;
+        }
+    }
+    
+    int ammo = 7;
+    int reloadTimer;
+    public void reload()
+    {
+        if(Greenfoot.isKeyDown("e"))
+        {
+            reloadTimer = (reloadTimer+1)%35;
+            if(reloadTimer == 0)
+            {
+                ammo = 7;
+                
+            }
+            
         }
     }
     
