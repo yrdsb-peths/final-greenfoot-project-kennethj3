@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * My world class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Kenneth Jin 
+ * January 2
  */
 public class MyWorld extends World
 {

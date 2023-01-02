@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.GreenfootImage;
 
 /**
- * Write a description of class Soldier here.
+ * Soldier class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Kenneth Jin 
+ * January 2
  */
 public class Soldier extends Actor
 {
