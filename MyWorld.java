@@ -69,7 +69,7 @@ public class MyWorld extends World
     {
         if(Greenfoot.isKeyDown("e"))
         {
-            reloadTimer = (reloadTimer+1)%35;
+            reloadTimer = (reloadTimer+1)%25;
             if(reloadTimer == 0)
             {
                 ammo = 7;
