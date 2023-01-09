@@ -67,7 +67,7 @@ public class MyWorld extends World
     int reloadTimer;
     public void reload()
     {
-        if(Greenfoot.isKeyDown("e"))
+        if(Greenfoot.isKeyDown("r"))
         {
             reloadTimer = (reloadTimer+1)%25;
             if(reloadTimer == 0)
