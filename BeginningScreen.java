@@ -40,17 +40,19 @@ public class BeginningScreen extends World
         label.setLocation(598,287);
         Label label2 = new Label("Press space to continue", 40);
         addObject(label2,559,427);
-        
+
         label.setLocation(591,280);
-        
+
+        label.setLocation(560,281);
+        label2.setLocation(561,430);
     }
     
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            TutorialScreen tutorial = new TutorialScreen(); 
+            Greenfoot.setWorld(tutorial);
         }
     }
 }
