@@ -91,5 +91,19 @@ public class TutorialScreen extends World
         label.setLocation(431,122);
         label.setLocation(471,131);
         label.setLocation(415,118);
+        removeObject(label);
+        label4.setLocation(277,399);
+        label3.setLocation(335,327);
+        label2.setLocation(338,247);
+        Label label8 = new Label("Press space to shoot", 50);
+        addObject(label8,347,191);
+        label8.setLocation(321,179);
+        label2.setLocation(322,250);
+        Label label6 = new Label("Score", 60);
+        addObject(label6,136,75);
+        label6.setLocation(124,63);
+        Label label7 = new Label("Ammo", 60);
+        addObject(label7,985,61);
+        label7.setLocation(976,59);
     }
 }
