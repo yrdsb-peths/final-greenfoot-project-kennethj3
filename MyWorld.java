@@ -53,6 +53,7 @@ public class MyWorld extends World
         addObject(endLabel, 544, 242);
     }
     
+    //changes the score label everytime a zombie dies
     public void increaseScore()
     {
         score++;
@@ -65,6 +66,7 @@ public class MyWorld extends World
     
     int ammo = 7;
     int reloadTimer;
+    //reloads when r key is pressed
     public void reload()
     {
         if(Greenfoot.isKeyDown("r"))
@@ -79,7 +81,7 @@ public class MyWorld extends World
         }
     }
     
-    
+    //spawns zombie and sets the speed depending on the score
     public void spawnZombies()
     {
         Zombie zombie = new Zombie();
@@ -99,6 +101,7 @@ public class MyWorld extends World
     }
     
     int spawnTimer;
+    //changes the spawning based on the score
     private void checkForSpawn()
     {
         spawnTimer = (spawnTimer+1)%(150-(level*20)); 
