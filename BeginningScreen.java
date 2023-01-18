@@ -17,6 +17,9 @@ public class BeginningScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1088, 585, 1); 
+        GreenfootImage background = new GreenfootImage("Background.jpg");
+        background.scale(getWidth(), getHeight());
+        setBackground(background);
 
         prepare();
     }
@@ -45,6 +48,17 @@ public class BeginningScreen extends World
 
         label.setLocation(560,281);
         label2.setLocation(561,430);
+        soldier.setLocation(130,441);
+        soldier.setLocation(85,418);
+        Zombie zombie = new Zombie();
+        addObject(zombie,998,431);
+        Bullet bullet = new Bullet();
+        addObject(bullet,197,440);
+        bullet.setLocation(179,448);
+        Bullet bullet2 = new Bullet();
+        addObject(bullet2,273,450);
+        bullet2.setLocation(274,447);
+        soldier.setLocation(86,432);
     }
     
     public void act()
