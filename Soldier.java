@@ -73,6 +73,7 @@ public class Soldier extends Actor
     
     
     int i = 0;
+    //this method animates the soldier
     public void animations()
     {
         if(animationTimer.millisElapsed() < 100)
@@ -97,7 +98,7 @@ public class Soldier extends Actor
         
     }
     
-    
+    //this methods checks if the user pressed on space key and if they did it will shoot a bullet
     private void shoot()
     {
         if(Greenfoot.isKeyDown("space"))
@@ -120,6 +121,7 @@ public class Soldier extends Actor
     
     
     int shootingTimer;
+    //creates gap between each shot
     private void checkForShooting()
     {
         shootingTimer = (shootingTimer+1)%20;

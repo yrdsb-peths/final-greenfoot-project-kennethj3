@@ -40,7 +40,7 @@ public class Bullet extends Actor
         sound = new GreenfootSound("BulletHitting.mp3");
     }
     
-    
+    //this method detects if the bullet has hit a zombie
     public void hittingZombies()
     {
         if(isTouching(Zombie.class))

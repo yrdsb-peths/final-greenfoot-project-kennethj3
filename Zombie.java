@@ -94,6 +94,7 @@ public class Zombie extends Actor
         speed = spd;
     }
     
+    //check if the player is hit by a zombie
     public void killingPlayer()
     {
         if(isTouching(Soldier.class))
