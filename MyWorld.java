@@ -14,6 +14,7 @@ public class MyWorld extends World
      * 
      */
     SimpleTimer zombieSpawnTimer = new SimpleTimer();
+    GreenfootSound sound;
     public int score = 0;
     int level = 1;
     Label scoreLabel;
@@ -36,7 +37,7 @@ public class MyWorld extends World
         ammoLabel = new Label(7, 125);
         addObject(ammoLabel, 1038, 60);
         
-        
+        sound = new GreenfootSound("reload.mp3");
         
     }
     
@@ -71,11 +72,11 @@ public class MyWorld extends World
     {
         if(Greenfoot.isKeyDown("r"))
         {
-            reloadTimer = (reloadTimer+1)%25;
+            reloadTimer = (reloadTimer+1)%20;
             if(reloadTimer == 0)
             {
                 ammo = 7;
-                
+                sound.play();
             }
             
         }
