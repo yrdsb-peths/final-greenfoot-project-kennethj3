@@ -23,7 +23,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1088, 585, 1,false);
-        GreenfootImage background = new GreenfootImage("Background.jpg");
+        GreenfootImage background = new GreenfootImage("background.jpg");
         background.scale(getWidth(), getHeight());
         setBackground(background);
         Soldier soldier = new Soldier();
